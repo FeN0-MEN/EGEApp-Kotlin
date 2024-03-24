@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Обводка кнопки -->
+    <item>
+        <shape android:shape="oval">
+            <stroke
+                android:width="3dp"
+                android:color="#BC6C25" />
+            <solid android:color="#F7F4E0" />
+        </shape>
+    </item>
+    <!-- Изображение на кнопке -->
+    <item
+        android:drawable="@drawable/arrow_13__stroke___1_"
+        android:width="24dp"
+        android:height="25dp"
+        android:gravity="center" />
+</layer-list>
