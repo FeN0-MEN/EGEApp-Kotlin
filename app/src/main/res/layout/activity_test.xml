@@ -4,65 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FEFAE0"
+    android:backgroundTint="#FEFAE0"
     tools:context=".TestActivity">
 
-    <ImageView
-        android:id="@+id/imageBox"
-        android:layout_width="380dp"
-        android:layout_height="212dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="237dp" />
-
-    <EditText
-        android:id="@+id/AnswerEditText"
-        android:layout_width="236dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:hint="Ответ"
-        android:inputType="textPersonName"
-        android:selectAllOnFocus="false"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="458dp" />
-
-    <Button
-        android:id="@+id/buttonBack"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:text="Перейти к предыдущему заданию"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="506dp" />
-
-    <Button
+    <ImageButton
         android:id="@+id/buttonNext"
         android:layout_width="110dp"
         android:layout_height="50dp"
-        android:onClick="onClickNext"
-        android:text="Перейти к следующему заданию"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="506dp" />
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/image_button_right"
+        android:onClick="onClickSignIn"
+        android:tint="#F7F4E0"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDownload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toEndOf="@+id/buttonBack" />
 
-    <Button
-        android:id="@+id/buttonExit"
-        android:layout_width="236dp"
-        android:layout_height="50dp"
-        android:onClick="onClickExit"
-        android:text="Выйти"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="639dp" />
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="111sp"
+        android:layout_height="42sp"
+        android:background="@drawable/custom_rectangle"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-    <Button
-        android:id="@+id/buttonDownload"
-        android:layout_width="236dp"
-        android:layout_height="50dp"
-        android:text="Скачать файл"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="575dp" />
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#606C38"
+            android:textSize="16sp" />
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="399dp"
-        android:layout_height="228dp"
-        tools:layout_editor_absoluteX="6dp">
+        android:layout_width="400dp"
+        android:layout_height="210dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.883">
 
         <TextView
             android:id="@+id/TextTask"
@@ -74,11 +62,125 @@
             android:layout_marginBottom="7dp"
             android:scrollbars="vertical"
             android:verticalScrollbarPosition="right"
-            app:layout_constraintBottom_toTopOf="@+id/imageBox"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="88dp"
+        android:background="@drawable/image_button_left"
+        android:onClick="onClickSignIn"
+        android:tint="#F7F4E0"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDownload"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AnswerEditText"
+        app:layout_constraintVertical_bias="0.368" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="236dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#F6F3DF"
+        android:fontFamily="@font/droid_sans"
+        android:onClick="onClickExit"
+        android:text="Выйти"
+        android:textAllCaps="false"
+        android:textColor="#606C38"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="90sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#BB6C25"
+        app:strokeWidth="3sp" />
+
+    <Button
+        android:id="@+id/buttonDownload"
+        android:layout_width="236dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#F6F3DF"
+        android:fontFamily="@font/droid_sans"
+        android:text="Скачать файл"
+        android:textAllCaps="false"
+        android:textColor="#606C38"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="90sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonExit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#BB6C25"
+        app:strokeWidth="3sp" />
+
+    <EditText
+        android:id="@+id/AnswerEditText"
+        android:layout_width="232dp"
+        android:layout_height="39dp"
+        android:backgroundTint="#BC6C25"
+        android:ems="10"
+        android:fontFamily="@font/droid_sans"
+        android:hint="Ответ"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:textColor="#606C38"
+        android:textColorHint="#606C38"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="475dp" />
+
+    <ImageView
+        android:id="@+id/imageBox"
+        android:layout_width="380dp"
+        android:layout_height="198dp"
+        app:layout_constraintBottom_toTopOf="@+id/AnswerEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <RelativeLayout
+        android:layout_width="41dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="41sp"
+        android:layout_height="3sp"
+        android:layout_marginBottom="8dp"
+        android:background="#BB6C25"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        tools:layout_editor_absoluteX="5dp" />
+
+    <TextView
+        android:id="@+id/textViewNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="№"
+        android:textColor="#606C38"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        tools:layout_editor_absoluteX="5dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

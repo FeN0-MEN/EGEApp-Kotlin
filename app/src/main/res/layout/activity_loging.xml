@@ -28,43 +28,54 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/passwordLog"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/GoogleAuth"
-        android:layout_width="50dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginEnd="181dp"
         android:layout_marginBottom="56dp"
         android:background="@drawable/c1659a4425e9be3ae9fb558510c3f8ad"
         android:background="@drawable/image_button"
         android:onClick="onClickSignIn"
         android:tint="#F7F4E0"
         app:layout_constraintBottom_toTopOf="@+id/message"
-        tools:layout_editor_absoluteX="180dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/exit" />
 
     <ImageButton
         android:id="@+id/exit"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/image_button_X"
         android:onClick="onClickSignIn"
         android:tint="#F7F4E0"
+        app:layout_constraintBottom_toBottomOf="@+id/GoogleAuth"
         app:layout_constraintEnd_toStartOf="@+id/GoogleAuth"
         app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="453dp" />
+        app:layout_constraintTop_toTopOf="@+id/GoogleAuth" />
 
     <ImageButton
         android:id="@+id/sigin"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="453dp"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/image_button_next"
         android:onClick="onClickSignIn"
         android:tint="#F7F4E0"
+        app:layout_constraintBottom_toTopOf="@+id/message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toEndOf="@+id/GoogleAuth"
-        tools:layout_editor_absoluteY="453dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Register"
@@ -81,18 +92,21 @@
         android:textStyle="bold"
         app:cornerRadius="90sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="#BC6C25"
-        app:strokeWidth="3dp"
-        tools:layout_editor_absoluteX="120dp" />
+        app:strokeWidth="3dp" />
 
     <TextView
         android:id="@+id/message"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="153dp"
         android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/Register"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sigin" />
 
     <EditText
         android:id="@+id/passwordLog"

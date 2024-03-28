@@ -9,7 +9,7 @@
     tools:context=".RegActivity">
 
     <EditText
-        android:id="@+id/Bvz"
+        android:id="@+id/Name"
         android:layout_width="171dp"
         android:layout_height="38dp"
         android:layout_marginBottom="8dp"
@@ -48,7 +48,7 @@
         app:layout_constraintBottom_toTopOf="@+id/passwordEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Bvz" />
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -136,7 +136,7 @@
         android:layout_height="114dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="58dp"
-        app:layout_constraintBottom_toTopOf="@+id/Bvz"
+        app:layout_constraintBottom_toTopOf="@+id/Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
