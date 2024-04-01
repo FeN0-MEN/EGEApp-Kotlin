@@ -1,6 +1,9 @@
 package com.example.egeapp_kotlin
 
+import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -8,6 +11,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
 import com.example.egeapp_kotlin.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -21,9 +25,13 @@ import com.google.firebase.auth.GoogleAuthProvider
 class LogingActivity : AppCompatActivity() {
     var message: TextView? = null
 
+
     fun StartRegisterActivity(v: View?) {
         val intent = Intent(this, RegActivity::class.java)
         startActivity(intent)
+    }
+    fun closeCurrentActivity(activity: Activity) {
+        activity.finish()
     }
 
     // [START declare_auth]
@@ -33,6 +41,7 @@ class LogingActivity : AppCompatActivity() {
     private var mGoogleSignInClient: GoogleSignInClient? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FEFAE0")))
         // [START config_signin]
         // Конфигурация для авторизации через Google
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -144,6 +153,7 @@ class LogingActivity : AppCompatActivity() {
                     Toast.makeText(this@LogingActivity, "Ошибка авторизации: " + task.exception!!.message, Toast.LENGTH_LONG).show()
                 }
             }
+
     }
 
     companion object {

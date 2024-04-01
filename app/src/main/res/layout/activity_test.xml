@@ -15,23 +15,24 @@
         android:layout_marginBottom="12dp"
         android:background="@drawable/image_button_right"
         android:onClick="onClickSignIn"
-        android:tint="#F7F4E0"
         app:layout_constraintBottom_toTopOf="@+id/buttonDownload"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.145"
-        app:layout_constraintStart_toEndOf="@+id/buttonBack" />
+        app:layout_constraintStart_toEndOf="@+id/buttonBack"
+        app:tint="#F7F4E0" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="111sp"
+        android:layout_width="111dp"
         android:layout_height="42sp"
+        android:layout_marginEnd="150dp"
         android:background="@drawable/custom_rectangle"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toEndOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/timerTextView"
@@ -42,11 +43,25 @@
             android:textSize="16sp" />
     </RelativeLayout>
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="3sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="8dp"
+        android:background="#BB6C25"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="400dp"
-        android:layout_height="210dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageBox"
+        android:layout_height="0dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginBottom="216dp"
+        app:layout_constraintBottom_toTopOf="@+id/AnswerEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -61,8 +76,9 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="7dp"
             android:scrollbars="vertical"
-            android:verticalScrollbarPosition="right"
+            android:textColor="#606C38"
 
+            android:verticalScrollbarPosition="right"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,14 +89,15 @@
         android:id="@+id/buttonBack"
         android:layout_width="110dp"
         android:layout_height="50dp"
-        android:layout_marginStart="88dp"
         android:background="@drawable/image_button_left"
         android:onClick="onClickSignIn"
-        android:tint="#F7F4E0"
         app:layout_constraintBottom_toTopOf="@+id/buttonDownload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.292"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AnswerEditText"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintVertical_bias="0.368"
+        app:tint="#F7F4E0" />
 
     <Button
         android:id="@+id/buttonExit"
@@ -125,8 +142,9 @@
 
     <EditText
         android:id="@+id/AnswerEditText"
-        android:layout_width="232dp"
-        android:layout_height="39dp"
+        android:layout_width="236dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="217dp"
         android:backgroundTint="#BC6C25"
         android:ems="10"
         android:fontFamily="@font/droid_sans"
@@ -136,9 +154,10 @@
         android:textColor="#606C38"
         android:textColorHint="#606C38"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="475dp" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <ImageView
         android:id="@+id/imageBox"
@@ -151,36 +170,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.96" />
 
-    <RelativeLayout
-        android:layout_width="41dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
+    <TextView
+        android:id="@+id/textViewNum"
+        android:layout_width="25dp"
+        android:layout_height="22dp"
+        android:fontFamily="@font/droid_sans"
+        android:text="1"
+        android:textAlignment="textStart"
+        android:textColor="#606C38"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewNumber"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-    </RelativeLayout>
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="41sp"
-        android:layout_height="3sp"
-        android:layout_marginBottom="8dp"
-        android:background="#BB6C25"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        tools:layout_editor_absoluteX="5dp" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <TextView
         android:id="@+id/textViewNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
         android:text="№"
         android:textColor="#606C38"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/view"
-        tools:layout_editor_absoluteX="5dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
