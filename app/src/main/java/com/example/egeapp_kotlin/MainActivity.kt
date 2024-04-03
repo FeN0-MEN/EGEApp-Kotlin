@@ -29,8 +29,18 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun onClickEx(view: View?) {
+        val intent = Intent(this, ExActivity::class.java)
+        startActivity(intent)
+    }
+
     fun onClickChoiceTheory(view: View?) {
         val intent = Intent(this, ChoosingTheoryActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun onClickStat(view: View?) {
+        val intent = Intent(this, StatActivity::class.java)
         startActivity(intent)
     }
 }

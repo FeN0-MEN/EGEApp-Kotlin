@@ -1,18 +1,2349 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExActivity">
+    android:background="#FEFAE0"
+    android:backgroundTint="#FEFAE0">
 
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/test"
-        android:text="Button"
-        android:textColor="#E91E63"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="397dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- TextView с заголовком и подчёркивающей линией -->
+        <RelativeLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Выберите задания и их количество"
+                android:textColor="#606C38"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/title_underline"
+                android:layout_width="308dp"
+                android:layout_height="3dp"
+                android:layout_below="@id/title_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="20dp"
+                android:background="#BC6C25" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 1 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout1"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_below="@id/title_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line1"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line1"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum1"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№1"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText1"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line1"
+                android:layout_toEndOf="@+id/left_line1"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Анализ информационных моделей"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput1"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 2 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout2"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout1"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line2"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line2"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum2"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№2"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText2"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line2"
+                android:layout_toEndOf="@+id/left_line2"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Построение таблиц истинности логических выражений"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput2"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+        <!-- Бокс с заданием 3 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout3"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout2"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line3"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line3"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum3"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№3"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText3"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line3"
+                android:layout_toEndOf="@+id/left_line3"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Поиск информации в реляционных базах данных"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput3"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 4 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout4"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout3"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line4"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line4"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum4"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№4"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText4"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line4"
+                android:layout_toEndOf="@+id/left_line4"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Кодирование и декодирование информации"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput4"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 5 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout5"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout4"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line5"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line5"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum5"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№5"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText5"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line5"
+                android:layout_toEndOf="@+id/left_line5"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Анализ и построение алгоритмов для исполнителей"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput5"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 6 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout6"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout5"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line6"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line6"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum6"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№6"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText6"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line6"
+                android:layout_toEndOf="@+id/left_line6"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Определение результатов работы простейших алгоритмов"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput6"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 7 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout7"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout6"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line7"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line7"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum7"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№7"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText7"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line7"
+                android:layout_toEndOf="@+id/left_line7"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Кодирование и декодирование информации"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput7"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 8 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout8"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout7"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line8"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line8"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum8"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№8"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText8"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line8"
+                android:layout_toEndOf="@+id/left_line8"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Перебор слов и системы счисления"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput8"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 9 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout9"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout8"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line9"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line9"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum9"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№9"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText9"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line9"
+                android:layout_toEndOf="@+id/left_line9"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Работа с таблицами"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput9"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 10 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout10"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout9"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line10"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line10"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum10"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№10"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText10"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line10"
+                android:layout_toEndOf="@+id/left_line10"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Поиск символов в текстовом редакторе"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput10"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 11 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout11"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout10"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line11"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line11"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum11"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№11"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText11"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line11"
+                android:layout_toEndOf="@+id/left_line11"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Вычисление количества информации"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput11"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 12 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout12"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout11"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line12"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line12"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum12"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№12"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText12"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line12"
+                android:layout_toEndOf="@+id/left_line12"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Выполнение алгоритмов для исполнителей"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput12"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 13 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout13"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout12"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line13"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line13"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum13"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№13"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText13"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line13"
+                android:layout_toEndOf="@+id/left_line13"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Организация компьютерных сетей, адресация"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput13"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 14 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout14"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout13"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line14"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line14"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum14"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№14"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText14"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line14"
+                android:layout_toEndOf="@+id/left_line14"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Кодирование чисел. Системы счисления"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput14"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 15 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout15"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout14"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line15"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line15"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum15"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№15"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText15"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line15"
+                android:layout_toEndOf="@+id/left_line15"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Преобразование логических выражений"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput15"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 16 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout16"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout15"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line16"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line16"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum16"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№16"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText16"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line16"
+                android:layout_toEndOf="@+id/left_line16"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Рекурсивные алгоритмы"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput16"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 17 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout17"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout16"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line17"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line17"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum17"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№17"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText17"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line17"
+                android:layout_toEndOf="@+id/left_line17"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Обработки числовой последовательности"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput17"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 18 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout18"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout17"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line18"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line18"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum18"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№18"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText18"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line18"
+                android:layout_toEndOf="@+id/left_line18"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Робот-сборщик монет"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput18"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 19 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout19"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout18"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line19"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line19"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum19"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№19"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText19"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line19"
+                android:layout_toEndOf="@+id/left_line19"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Выигрышная стратегия. Задание 1"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput19"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 20 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout20"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout19"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line20"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line20"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum20"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№20"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText20"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line20"
+                android:layout_toEndOf="@+id/left_line20"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Выигрышная стратегия. Задание 2"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput20"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 21 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout21"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout20"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line21"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line21"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum21"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№21"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText21"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line21"
+                android:layout_toEndOf="@+id/left_line21"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Выигрышная стратегия. Задание 3"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput21"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 22 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout22"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout21"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line22"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line22"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum22"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№22"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText22"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line22"
+                android:layout_toEndOf="@+id/left_line22"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Многопроцессорные системы"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput22"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 23 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout23"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout22"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line23"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line23"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum23"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№23"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText23"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line23"
+                android:layout_toEndOf="@+id/left_line23"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Оператор присваивания и ветвления"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput23"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 24 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout24"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout23"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line24"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line24"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum24"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№24"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText24"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line24"
+                android:layout_toEndOf="@+id/left_line24"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Обработка символьных строк"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput24"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 25 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout25"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout24"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line25"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line25"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum25"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№25"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText25"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line25"
+                android:layout_toEndOf="@+id/left_line25"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Обработка целочисленной информации 1"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput25"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 26 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout26"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout25"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line26"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line26"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum26"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№26"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText26"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line26"
+                android:layout_toEndOf="@+id/left_line26"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Обработка целочисленной информации 2"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput26"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!-- Бокс с заданием 27 -->
+        <RelativeLayout
+            android:id="@+id/rectangle_layout27"
+            android:layout_width="300dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout26"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ex_rectangle">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+            <View
+                android:id="@+id/left_line27"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="48dp"
+                android:background="#BC6C25" />
+
+            <View
+                android:id="@+id/right_line27"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="48dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum27"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="39dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="№27"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText27"
+                android:layout_width="196dp"
+                android:layout_height="83dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toStartOf="@+id/right_line27"
+                android:layout_toEndOf="@+id/left_line27"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Программирование"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/exInput27"
+                android:layout_width="39dp"
+                android:layout_height="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="26dp"
+                android:background="#FDF9DF"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textColorHint="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/buttonExTest"
+            android:layout_width="196dp"
+            android:layout_height="53dp"
+            android:layout_below="@id/rectangle_layout27"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#F7F4E0"
+            android:fontFamily="@font/droid_sans"
+            android:letterSpacing="0.05"
+            android:onClick="onClickTest"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:shadowColor="#040404"
+            android:shadowDy="10"
+            android:text="Решать"
+            android:textAllCaps="false"
+            android:textColor="#606C38"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="90sp"
+            app:iconTint="#F6F3DF"
+            app:rippleColor="#F6F3DF"
+            app:strokeColor="#BC6C25"
+            app:strokeWidth="3dp" />
+
+        <Button
+            android:id="@+id/buttonExBack"
+            android:layout_width="196dp"
+            android:layout_height="53dp"
+            android:layout_below="@id/buttonExTest"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
+            android:backgroundTint="#F7F4E0"
+            android:fontFamily="@font/droid_sans"
+            android:letterSpacing="0.05"
+            android:onClick="onClickTest"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:shadowColor="#040404"
+            android:shadowDy="10"
+            android:text="Назад"
+            android:textAllCaps="false"
+            android:textColor="#606C38"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="90sp"
+            app:iconTint="#F6F3DF"
+            app:rippleColor="#F6F3DF"
+            app:strokeColor="#BC6C25"
+            app:strokeWidth="3dp" />
+
+        <!-- Добавьте сколько угодно фигур, каждая будет листаться вверх или вниз -->
+
+    </RelativeLayout>
+
+</ScrollView>
