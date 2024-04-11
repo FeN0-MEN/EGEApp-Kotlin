@@ -21,6 +21,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.FirebaseDatabase
 
 class LogingActivity : AppCompatActivity() {
     var message: TextView? = null
@@ -97,6 +98,27 @@ class LogingActivity : AppCompatActivity() {
                     // Успешно вошли в систему, обновление пользовательского интерфейса информацией о вошедшем пользователе
                     Log.d(TAG, "signInWithCredential:success")
                     val user = mAuth!!.currentUser
+
+                    // Получаем информацию о пользователе из объекта GoogleSignInAccount
+                    val account = GoogleSignIn.getLastSignedInAccount(this)
+                    val name = account?.displayName
+                    val email = account?.email
+
+                    // Создаем уникальный идентификатор пользователя
+                    val userId = user?.uid
+
+                    // Ссылка на базу данных "Users"
+                    val database = FirebaseDatabase.getInstance()
+                    val usersRef = database.getReference("Users")
+
+                    // Создаем подузел для текущего пользователя с его уникальным идентификатором
+                    val currentUserRef = usersRef.child(userId ?: "")
+
+                    // Заполняем данные пользователя
+                    currentUserRef.child("E-mail").setValue(email)
+                    currentUserRef.child("Name").setValue(name)
+                    currentUserRef.child("Stats").setValue("") // Пока оставляем пустым
+
                     updateUI(user)
                 } else {
                     // Если вход систему прошёл не удачно

@@ -42,6 +42,7 @@ class TestActivity : AppCompatActivity() {
     private var indexChoice = 0
     private lateinit var timerTextView: TextView
     private lateinit var countDownTimer: CountDownTimer
+    var timeInMilleseconds: Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FEFAE0")))
@@ -109,9 +110,11 @@ class TestActivity : AppCompatActivity() {
                     }
                 }
                 globalScore = sumOfScore
+                timeInMilleseconds = stopTimer()
                 val context = v.context
                 val intent = Intent(context, TestResult::class.java)
                 intent.putExtra("Score", globalScore)
+                intent.putExtra("timeInMilleseconds", timeInMilleseconds)
                 context.startActivity(intent)
             }
         }
@@ -158,15 +161,19 @@ class TestActivity : AppCompatActivity() {
                         }
                     }
                     globalScore = sumOfScore
+                    timeInMilleseconds = stopTimer()
                     val context = v.context
                     val intent = Intent(context, TestResult::class.java)
                     intent.putExtra("Score", globalScore)
+                    intent.putExtra("timeInMilleseconds", timeInMilleseconds)
                     context.startActivity(intent)
                 }
             }
         }
     }
+    private var startTimeMillis: Long = 0 // Объявляем переменную startTimeMillis
     private fun startTimer(milliseconds: Long, context: Context) {
+        startTimeMillis = System.currentTimeMillis() // Инициализируем startTimeMillis
         countDownTimer = object : CountDownTimer(milliseconds, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 // Показываем оставшееся время в формате минут:секунды
@@ -197,9 +204,21 @@ class TestActivity : AppCompatActivity() {
             }
         }.start()
     }
+
+    // Функция для остановки таймера и получения прошедшего времени
+    fun stopTimer(): Long {
+        countDownTimer?.cancel() // Отменяем таймер, если он был запущен
+
+        // Вычисляем прошедшее время в миллисекундах
+        val elapsedTimeInMillis = System.currentTimeMillis() - startTimeMillis
+
+        return elapsedTimeInMillis // Возвращаем прошедшее время в миллисекундах
+    }
+
     fun onClickExit(view: View?) {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
     private fun loadTaskFromFirebase(taskKey: String, numberKey: String?) {

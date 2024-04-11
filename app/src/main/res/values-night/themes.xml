@@ -12,6 +12,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="android:windowLightStatusBar">true</item>
+
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
         <!-- Customize your theme here. -->
     </style>
 </resources>
