@@ -1,9 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StatActivity">
+    android:background="#FEFAE0"
+    android:backgroundTint="#FEFAE0">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- TextView с заголовком и подчёркивающей линией -->
+        <RelativeLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Время"
+                android:textColor="#606C38"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/title_underline"
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:layout_below="@id/title_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="20dp"
+                android:background="#BC6C25" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rectangle_layout1"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_below="@id/title_layout"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ex_rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="36dp">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+
+            <View
+                android:id="@+id/right_line1"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="81dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum1"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignStart="@+id/right_line1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="13dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText1"
+                android:layout_width="193dp"
+                android:layout_height="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="11dp"
+                android:layout_toStartOf="@+id/right_line1"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Среднее"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rectangle_layout2"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout1"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ex_rectangle"
+            app:layout_constraintBottom_toTopOf="@+id/rectangle_layout1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_layout3"
+            app:layout_constraintVertical_bias="0.516">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+
+            <View
+                android:id="@+id/right_line2"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="81dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum2"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignStart="@+id/right_line2"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="13dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText2"
+                android:layout_width="193dp"
+                android:layout_height="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="11dp"
+                android:layout_toStartOf="@+id/right_line2"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Наибольшее"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rectangle_layout3"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout2"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ex_rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="202dp">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+
+            <View
+                android:id="@+id/right_line3"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="81dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum3"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignStart="@+id/right_line3"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText3"
+                android:layout_width="193dp"
+                android:layout_height="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="11dp"
+                android:layout_toStartOf="@+id/right_line3"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Наименьшее"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rectangle_layout4"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rectangle_layout3"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ex_rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="202dp">
+
+            <!-- Вертикальные линии внутри прямоугольника -->
+
+            <View
+                android:id="@+id/right_line4"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="81dp"
+                android:background="#BC6C25" />
+
+            <TextView
+                android:id="@+id/exNum4"
+                android:layout_width="40dp"
+                android:layout_height="19dp"
+                android:layout_alignStart="@+id/right_line4"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exNumText4"
+                android:layout_width="193dp"
+                android:layout_height="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="11dp"
+                android:layout_toStartOf="@+id/right_line4"
+                android:fontFamily="@font/droid_sans"
+                android:gravity="center"
+                android:text="Всего за подготовкой"
+                android:textAlignment="center"
+                android:textColor="#606C38"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>

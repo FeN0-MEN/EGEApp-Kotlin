@@ -204,6 +204,7 @@
         android:layout_height="55sp"
         android:backgroundTint="#FDF9DF"
         android:fontFamily="@font/droid_sans"
+        android:onClick="onClickHelp"
         android:text="?"
         android:textAllCaps="false"
         android:textColor="#606C38"

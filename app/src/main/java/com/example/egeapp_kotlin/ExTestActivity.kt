@@ -84,4 +84,8 @@ class ExTestActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+    fun onClickHelp(view: View?) {
+        val intent = Intent(this, HelpActivity::class.java)
+        startActivity(intent)
+    }
 }
