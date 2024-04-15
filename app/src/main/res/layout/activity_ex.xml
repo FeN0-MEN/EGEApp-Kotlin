@@ -2324,7 +2324,7 @@
             android:backgroundTint="#F7F4E0"
             android:fontFamily="@font/droid_sans"
             android:letterSpacing="0.05"
-            android:onClick="onClickTest"
+            android:onClick="onClickExExit"
             android:paddingStart="20dp"
             android:paddingTop="10dp"
             android:paddingEnd="20dp"

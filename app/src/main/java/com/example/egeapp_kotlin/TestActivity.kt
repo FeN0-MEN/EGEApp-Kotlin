@@ -10,17 +10,20 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Environment
 import android.text.TextUtils
-import android.widget.EditText
 import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.egeapp_kotlin.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
-import java.util.*
+import java.util.Random
 
 class TestActivity : AppCompatActivity() {
     private var TaskText: TextView? = null
@@ -216,8 +219,6 @@ class TestActivity : AppCompatActivity() {
     }
 
     fun onClickExit(view: View?) {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
         finish()
     }
 
