@@ -121,6 +121,7 @@ class TestActivity : AppCompatActivity() {
                 context.startActivity(intent)
             }
         }
+        // Обработчик события кнопки "назад"
         buttonBack.setOnClickListener { v ->
             if (number > 0) {
                 if (number <= 26) {

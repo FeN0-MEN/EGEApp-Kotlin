@@ -29,7 +29,7 @@
         android:background="@drawable/custom_rectangle"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
@@ -45,14 +45,12 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="0dp"
+        android:layout_width="60dp"
         android:layout_height="3sp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
         android:background="#BB6C25"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
@@ -172,7 +170,7 @@
 
     <TextView
         android:id="@+id/textViewNum"
-        android:layout_width="25dp"
+        android:layout_width="40dp"
         android:layout_height="22dp"
         android:fontFamily="@font/droid_sans"
         android:text="1"
@@ -184,7 +182,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textViewNumber"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <TextView
         android:id="@+id/textViewNumber"

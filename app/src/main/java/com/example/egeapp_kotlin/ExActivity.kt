@@ -36,19 +36,22 @@ class ExActivity : AppCompatActivity() {
             }
         }
     }
-    private fun getEditTextValues(): HashMap<String, String> {
-        val editTextValues = HashMap<String, String>()
-        for (editTextId in editTextIds) {
+
+
+    private fun getEditTextValues(): HashMap<String, Int> {
+        val editTextValues = HashMap<String, Int>()
+        for ((index, editTextId) in editTextIds.withIndex()) {
             val editText = findViewById<EditText>(editTextId)
-            val value = editText.text.toString()
-            editTextValues[resources.getResourceEntryName(editTextId)] = value
+            val value = editText.text.toString().toIntOrNull() ?: 0
+            val taskKey = "Task_${index + 1}"
+            editTextValues[taskKey] = value
         }
         return editTextValues
     }
-    private fun checkEditTextValues(editTextValues: HashMap<String, String>): Boolean {
+
+    private fun checkEditTextValues(editTextValues: HashMap<String, Int>): Boolean {
         for ((_, value) in editTextValues) {
-            val intValue = value.toIntOrNull()
-            if (intValue != null && intValue >= 1 && intValue <= 10) {
+            if (value in 1..10) {
                 return true
             }
         }
