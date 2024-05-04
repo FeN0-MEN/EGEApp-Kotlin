@@ -69,12 +69,14 @@
             android:id="@+id/TextTask"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
             android:layout_marginStart="8dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="7dp"
             android:scrollbars="vertical"
             android:textColor="#606C38"
+
 
             android:verticalScrollbarPosition="right"
             app:layout_constraintEnd_toEndOf="parent"
@@ -202,7 +204,6 @@
         android:layout_height="55sp"
         android:backgroundTint="#FDF9DF"
         android:fontFamily="@font/droid_sans"
-        android:onClick="onClickHelp"
         android:text="?"
         android:textAllCaps="false"
         android:textColor="#606C38"

@@ -1,6 +1,7 @@
 package com.example.egeapp_kotlin
 
 import android.app.DownloadManager
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -9,12 +10,14 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Environment
 import android.os.Handler
+import android.text.TextUtils
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -30,6 +33,8 @@ class ExTestActivity : AppCompatActivity() {
     private var imageBox: ImageView? = null
     private var buttonDownload: Button? = null
     private var textForTask: String? = null
+    private var helpText: String? = null
+    private var helpImg: String? = null
     private var globalExScore = 0
     private var scoreForTask: Int? = null
     private var answerEditText: EditText? = null
@@ -65,6 +70,7 @@ class ExTestActivity : AppCompatActivity() {
         buttonDownload?.setBackgroundColor(Color.parseColor("#DAD6BC"))
         val buttonNext = findViewById<ImageButton>(R.id.buttonNext)
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
+        val buttonHelp = findViewById<Button>(R.id.buttonHelp)
         buttonBack.isEnabled = false
         buttonBack.setBackgroundResource(R.drawable.image_button_left_blocked)
 
@@ -112,37 +118,83 @@ class ExTestActivity : AppCompatActivity() {
         }
 
         // Обработчик события для кнопки buttonNext
-        buttonNext.setOnClickListener {
+        buttonNext.setOnClickListener { v ->
             buttonBack.isEnabled = true
             buttonBack.setBackgroundResource(R.drawable.image_button_left)
-            // Получаем индекс текущего задания
-
-                // Проверяем, что есть еще задания для загрузки
-                if (currentIndex < taskNames.size && currentIndex < taskNumbers.size) {
-                    lastCurrentIndex = currentIndex
-                    currentIndex++
-                    if (currentIndex == taskNames.size-1) buttonNext.setBackgroundResource(R.drawable.image_button_right_finish)
-                    // Получаем ключи текущего задания и номера задания
-                    val taskKey = taskNames[currentIndex]
-                    val numberKey = taskNumbers[currentIndex]
-                    // Устанавливаем счётчик задания
-                    textViewNum.text = generateCounter(taskKey, currentIndex, taskNames)
-                    // Загружаем задание из Firebase
-                    loadTaskFromFirebase(taskKey, numberKey)
-
-                    // После загрузки, возможно, нужно обновить текущий индекс задания
-                    // Например, если это происходит в асинхронном блоке кода
-                    // Для примера, предположим, что после загрузки задания мы хотим увеличить индекс
-                    lastCurrentIndex = currentIndex
+            val nice = v.context
+            val userInput = answerEditText?.text.toString().trim { it <= ' ' }
+            if (answerEditText != null) {
+                answerArray[index] = userInput
+                answerEditText!!.setText("")
+                if (userInput == rightAnswer) {
+                    scoreArray[index] = 1
                 } else {
-                    // Если заданий больше нет, выполняем какие-то действия или выводим сообщение об этом
-                    // Например:
-                    // Toast.makeText(context, "Больше нет заданий", Toast.LENGTH_SHORT).show()
+                    if (scoreArray[index] != null) {
+                        if (scoreArray[index] == 1) { scoreArray[index] = 0 }
+                    }
                 }
+            }
+            index++
+            if (TextUtils.isEmpty(userInput)) {
+                Toast.makeText(nice, "Заполните ответ", Toast.LENGTH_SHORT).show()
+            }
+            // Проверяем, что есть еще задания для загрузки
+            if (currentIndex < taskNames.size && currentIndex < taskNumbers.size) {
+                lastCurrentIndex = currentIndex
+                currentIndex++
+                if (currentIndex >= taskNames.size)
+                {
+                    for (score in scoreArray) {
+                        if (score != null) {
+                            sumOfScore += score
+                        }
+                    }
+
+                    val context = v.context
+                    val startResult = Intent(context, ExTestResultActivity::class.java)
+                    startResult.putExtra("scoreForEx", sumOfScore)
+                    startResult.putExtra("timeForEx", seconds * 1000L)
+                    startResult.putExtra("allForEx", taskNumbers.size)
+                    context.startActivity(startResult)
+                    return@setOnClickListener
+                }
+                if (currentIndex == taskNames.size-1) buttonNext.setBackgroundResource(R.drawable.image_button_right_finish)
+                // Получаем ключи текущего задания и номера задания
+                val taskKey = taskNames[currentIndex]
+                val numberKey = taskNumbers[currentIndex]
+                // Устанавливаем счётчик задания
+                textViewNum.text = generateCounter(taskKey, currentIndex, taskNames)
+                // Загружаем задание из Firebase
+                loadTaskFromFirebase(taskKey, numberKey)
+
+                // После загрузки, возможно, нужно обновить текущий индекс задания
+                // Например, если это происходит в асинхронном блоке кода
+                // Для примера, предположим, что после загрузки задания мы хотим увеличить индекс
+                lastCurrentIndex = currentIndex
+            }
         }
 
-        buttonBack.setOnClickListener {
+        buttonBack.setOnClickListener { v ->
             buttonNext.setBackgroundResource(R.drawable.image_button_right)
+            val nice = v.context
+            val userInput = answerEditText?.text.toString().trim { it <= ' ' }
+            if (answerEditText != null) {
+                answerArray[index] = userInput
+                answerEditText!!.setText("")
+                if (userInput == rightAnswer) {
+                    scoreArray[index] = 1
+                } else {
+                    if (scoreArray[index] != null) {
+                        if (scoreArray[index] == 1) {
+                            scoreArray[index] = 0
+                        }
+                    }
+                }
+            }
+            index--
+            if (TextUtils.isEmpty(userInput)) {
+                Toast.makeText(nice, "Заполните ответ", Toast.LENGTH_SHORT).show()
+            }
             lastCurrentIndex = currentIndex
             // Уменьшаем индекс текущего задания
             currentIndex--
@@ -171,6 +223,11 @@ class ExTestActivity : AppCompatActivity() {
             }
         }
 
+        buttonHelp.setOnClickListener { v ->
+            val taskKey = taskNames[currentIndex]
+            val numberKey = taskNumbers[currentIndex]
+            loadHelpFromFirebase(this, taskKey, numberKey)
+        }
 
 
     }
@@ -301,6 +358,37 @@ class ExTestActivity : AppCompatActivity() {
             }
         })
     }
+
+    private fun loadHelpFromFirebase(context: Context, taskKey: String, numberKey: String?) {
+        // Получение ссылки на узел подсказки в Firebase
+        val helpRef = FirebaseDatabase.getInstance("https://appbase-66912-default-rtdb.europe-west1.firebasedatabase.app").reference.child(taskKey).child(numberKey!!)
+        helpRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    // Получение значений из Firebase и присвоение их переменным
+                    helpText = dataSnapshot.child("HelpText").getValue(String::class.java)
+                    helpImg = dataSnapshot.child("HelpImg").getValue(String::class.java)
+                    textForTask = dataSnapshot.child("Question").getValue(String::class.java)
+                    imageUrl = dataSnapshot.child("Img").getValue(String::class.java)
+
+                    // Создание нового интента для запуска активности подсказки
+                    val intent = Intent(context, HelpActivity::class.java)
+                    // Передача данных подсказки в активность подсказки через экстра
+                    intent.putExtra("helpText", helpText)
+                    intent.putExtra("helpImg", helpImg)
+                    intent.putExtra("textForTask", textForTask)
+                    intent.putExtra("imageUrl", imageUrl)
+                    // Запуск активности подсказки
+                    startActivity(intent)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Обработка ошибок чтения данных из Firebase
+            }
+        })
+    }
+
     // Обработчик таймера
     private fun startTimer() {
         isRunning = true

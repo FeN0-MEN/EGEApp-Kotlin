@@ -4,6 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FEFAE0"
+    android:backgroundTint="#FEFAE0"
     tools:context=".ExTestResultActivity">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="227dp"
+        android:layout_height="135dp"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.359"
+        app:srcCompat="@drawable/logotype__2_" />
+
+    <TextView
+        android:id="@+id/CongratulationTextView"
+        android:layout_width="220dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/droid_sans"
+        android:letterSpacing="0.05"
+        android:textAlignment="center"
+        android:textColor="#606C38"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="220sp"
+        android:layout_height="3sp"
+        android:background="#BC6C25"
+        app:layout_constraintBottom_toTopOf="@+id/CongratulationTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.993" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="220sp"
+        android:layout_height="3sp"
+        android:layout_marginBottom="240dp"
+        android:background="#BC6C25"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonOk"
+        android:layout_width="239dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#F7F4E0"
+        android:fontFamily="@font/droid_sans"
+        android:onClick="Exit"
+        android:text="Продолжить"
+        android:textAllCaps="false"
+        android:textColor="#606C38"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="90sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#BC6C25"
+        app:strokeWidth="3dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

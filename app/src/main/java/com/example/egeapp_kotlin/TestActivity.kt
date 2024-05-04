@@ -107,9 +107,9 @@ class TestActivity : AppCompatActivity() {
                     buttonNext.setBackgroundResource(R.drawable.image_button_right_finish)
                 }
             } else {
-                for (i in scoreArray.indices) {
-                    if (scoreArray[i] != null) {
-                        scoreArray[i] = scoreArray[i]!! + scoreArray[i]!!
+                for (score in scoreArray) {
+                    if (score != null) {
+                        sumOfScore += score
                     }
                 }
                 globalScore = sumOfScore
@@ -159,9 +159,9 @@ class TestActivity : AppCompatActivity() {
                         buttonNext.setBackgroundResource(R.drawable.image_button_right_finish)
                     }
                 } else {
-                    for (i in scoreArray.indices) {
-                        if (scoreArray[i] != null) {
-                            scoreArray[i] = scoreArray[i]!! + scoreArray[i]!!
+                    for (score in scoreArray) {
+                        if (score != null) {
+                            sumOfScore += score
                         }
                     }
                     globalScore = sumOfScore

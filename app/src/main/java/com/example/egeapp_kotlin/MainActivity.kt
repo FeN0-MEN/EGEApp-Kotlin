@@ -8,7 +8,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.egeapp_kotlin.LogingActivity
 import com.example.egeapp_kotlin.LogingActivity.Companion.signOut
-import com.example.egeapp_kotlin.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +40,11 @@ class MainActivity : AppCompatActivity() {
 
     fun onClickStat(view: View?) {
         val intent = Intent(this, StatActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun onClickAbout(view: View?){
+        val intent = Intent(this, AboutActivity::class.java)
         startActivity(intent)
     }
 }

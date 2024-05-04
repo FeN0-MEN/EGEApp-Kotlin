@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.egeapp_kotlin.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -17,7 +16,7 @@ class TestResult : AppCompatActivity() {
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FEFAE0")))
         setContentView(R.layout.activity_test_result)
         val ResultTextView = findViewById<TextView>(R.id.ResultTextView)
-        val CongratulationsTextView = findViewById<TextView>(R.id.CongratulationsTextView)
+        val CongratulationsTextView = findViewById<TextView>(R.id.CongratulationTextView)
         val ScoreTextView = findViewById<TextView>(R.id.ScoreTextView)
         // полученные баллы
         val globalScore = intent.getIntExtra("Score", 0)

@@ -8,11 +8,21 @@
     android:backgroundTint="#FEFAE0"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="236dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logotype__2_" />
+
     <Button
         android:id="@+id/buttonTheory"
         android:layout_width="171dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="19dp"
         android:backgroundTint="#F7F4E0"
         android:fontFamily="@font/droid_sans"
         android:letterSpacing="0.05"
@@ -26,32 +36,18 @@
         android:textStyle="bold"
         app:cornerRadius="90sp"
         app:iconTint="#F6F3DF"
-        app:layout_constraintBottom_toTopOf="@+id/buttonStat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonEx"
         app:rippleColor="#F6F3DF"
         app:strokeColor="#BC6C25"
-        app:strokeWidth="3dp" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="236dp"
-        android:layout_height="113dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="94dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonTest"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:strokeWidth="3dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonEx"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logotype__2_" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/buttonTest"
         android:layout_width="171dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="18dp"
         android:backgroundTint="#F7F4E0"
         android:fontFamily="@font/droid_sans"
         android:letterSpacing="0.05"
@@ -65,19 +61,18 @@
         android:textStyle="bold"
         app:cornerRadius="90sp"
         app:iconTint="#F6F3DF"
-        app:layout_constraintBottom_toTopOf="@+id/buttonEx"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:rippleColor="#F6F3DF"
         app:strokeColor="#BC6C25"
-        app:strokeWidth="3dp" />
+        app:strokeWidth="3dp"
+        app:layout_constraintTop_toBottomOf="@id/imageView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="70dp"/>
 
     <Button
         android:id="@+id/buttonEx"
         android:layout_width="171dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="18dp"
         android:backgroundTint="#F7F4E0"
         android:fontFamily="@font/droid_sans"
         android:letterSpacing="0.05"
@@ -91,19 +86,18 @@
         android:textStyle="bold"
         app:cornerRadius="90sp"
         app:iconTint="#F6F3DF"
-        app:layout_constraintBottom_toTopOf="@+id/buttonTheory"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonTest"
         app:rippleColor="#F6F3DF"
         app:strokeColor="#BC6C25"
-        app:strokeWidth="3dp" />
+        app:strokeWidth="3dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonTest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/buttonStat"
         android:layout_width="171dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="21dp"
         android:backgroundTint="#F7F4E0"
         android:fontFamily="@font/droid_sans"
         android:letterSpacing="0.05"
@@ -117,19 +111,38 @@
         android:textStyle="bold"
         app:cornerRadius="90sp"
         app:iconTint="#F6F3DF"
-        app:layout_constraintBottom_toTopOf="@+id/logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonTheory"
         app:rippleColor="#F6F3DF"
         app:strokeColor="#BC6C25"
-        app:strokeWidth="3dp" />
+        app:strokeWidth="3dp"
+        app:layout_constraintTop_toBottomOf="@id/About"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/About"
+        android:layout_width="171dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#F7F4E0"
+        android:fontFamily="@font/droid_sans"
+        android:letterSpacing="0.05"
+        android:text="Об экзамене"
+        android:textAllCaps="false"
+        android:textColor="#606C38"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="90sp"
+        app:strokeColor="#BC6C25"
+        app:strokeWidth="3dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonTheory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/logout"
         android:layout_width="171dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="142dp"
         android:backgroundTint="#F7F4E0"
         android:fontFamily="@font/droid_sans"
         android:letterSpacing="0.05"
@@ -143,12 +156,14 @@
         android:textStyle="bold"
         app:cornerRadius="90sp"
         app:iconTint="#F6F3DF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonStat"
         app:rippleColor="#F6F3DF"
         app:strokeColor="#BC6C25"
-        app:strokeWidth="3dp" />
+        app:strokeWidth="3dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonStat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
