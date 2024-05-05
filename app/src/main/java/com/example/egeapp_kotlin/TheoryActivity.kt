@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.egeapp_kotlin.R
 import com.squareup.picasso.Picasso
 
 class TheoryActivity : AppCompatActivity() {
@@ -46,6 +45,7 @@ class TheoryActivity : AppCompatActivity() {
 
             // Нахождение ImageView внутри диалогового окна
             val fullscreenImageView = dialog.findViewById<ImageView>(R.id.fullscreen_imageview)
+            fullscreenImageView.scaleType = ImageView.ScaleType.FIT_XY
 
             // Загрузка изображения по ссылке с помощью Picasso и установка его в ImageView
             Picasso.get().load(imageUrl).into(fullscreenImageView)

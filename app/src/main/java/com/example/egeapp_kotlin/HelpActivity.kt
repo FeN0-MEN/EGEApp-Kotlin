@@ -23,6 +23,8 @@ class HelpActivity : AppCompatActivity() {
         TextHelp = findViewById(R.id.TextHelp)
         imageBox = findViewById(R.id.imageBox)
         imageBoxHelp = findViewById(R.id.imageBoxHelp)
+        imageBox?.setVisibility(View.GONE)
+        imageBoxHelp?.setVisibility(View.GONE)
         val helpText = intent.getStringExtra("helpText")
         val helpImg = intent.getStringExtra("helpImg")
         val imageUrl = intent.getStringExtra("imageUrl")

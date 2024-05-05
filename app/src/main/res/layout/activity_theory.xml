@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FEFAE0">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,13 +14,15 @@
         android:backgroundTint="#FEFAE0"
         tools:context=".TheoryActivity">
 
+
+
         <Button
             android:id="@+id/buttonExitToMenu"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_marginStart="56dp"
             android:layout_marginEnd="56dp"
-            android:layout_marginBottom="56dp"
+            android:layout_marginBottom="20dp"
             android:backgroundTint="#F7F4E0"
             android:fontFamily="@font/droid_sans"
             android:onClick="backToChosing"
