@@ -4,6 +4,1161 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FEFAE0"
     tools:context=".AboutActivity">
+
+    <TextView
+        android:id="@+id/titleAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/droid_sans"
+        android:text="Об экзамене по информатике"
+        android:textColor="#606C38"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/underline"
+        android:layout_width="260dp"
+        android:layout_height="3dp"
+        android:layout_below="@id/titleAbout"
+        android:layout_centerHorizontal="true"
+        android:background="#BC6C25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleAbout" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="400dp"
+        android:layout_height="225dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/droid_sans"
+        android:text="В ЕГЭ по информатике 27 заданий с кратким ответом. За задания 1-25 можно получить по 1 первичному баллу, а за задания 26 и 27 — по 2 балла. Максимальный возможный результат — 29 первичных баллов.  Все задания нужно решить за 3 часа 55 минут.  На экзамене встретятся задания по программированию, логике, алгоритмизации, на работу с информационными моделями, а также на кодирование информации. \n \nНиже представлена таблица переводов первичных баллов во вторичные."
+        android:textAlignment="viewStart"
+        android:textColor="#606C38"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleAbout" />
+
+    <Button
+        android:id="@+id/buttonAboutBack"
+        android:layout_width="196dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FEFAE0"
+        android:onClick="onClickCloseAbout"
+        android:text="Назад"
+        android:textAllCaps="false"
+        android:textColor="#606C38"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="90sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#BB6C25"
+        app:strokeWidth="3dp" />
+
+    <ScrollView
+        android:layout_width="402dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonAboutBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@id/buttonAboutBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView">
+
+            <!-- Здесь определяются строки и столбцы таблицы -->
+
+            <!-- Пример одной строки -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Первичный балл"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Вторичный балл"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_red"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="1"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_red"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="9"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_red"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="2"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_red"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="14"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_red"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="3"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_red"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="20"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_red"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="4"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_red"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="27"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_red"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="5"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_red"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="34"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <!-- Ячейка 1 -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cell_border_red"
+                        android:fontFamily="@font/droid_sans"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="6"
+                        android:textColor="#606C38"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Ячейка 2 -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cell_border_red"
+                        android:fontFamily="@font/droid_sans"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="40"
+                        android:textColor="#606C38"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <!-- Ячейка 1 -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cell_border_red"
+                        android:fontFamily="@font/droid_sans"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="7"
+                        android:textColor="#606C38"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Ячейка 2 -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cell_border_red"
+                        android:fontFamily="@font/droid_sans"
+                        android:gravity="center"
+                        android:padding="0dp"
+                        android:text="43"
+                        android:textColor="#606C38"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <!-- Ячейка 1 -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cell_border"
+                        android:fontFamily="@font/droid_sans"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="8"
+                        android:textColor="#606C38"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Ячейка 2 -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cell_border"
+                        android:fontFamily="@font/droid_sans"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="46"
+                        android:textColor="#606C38"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <!-- Ячейка 1 -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cell_border"
+                        android:fontFamily="@font/droid_sans"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="9"
+                        android:textColor="#606C38"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Ячейка 2 -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cell_border"
+                        android:fontFamily="@font/droid_sans"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="48"
+                        android:textColor="#606C38"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="10"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="51"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="11"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="54"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="12"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="56"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="13"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="59"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="14"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="62"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="15"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="64"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="16"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="67"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="17"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="70"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="18"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="72"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="19"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="75"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="20"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="78"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="21"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="80"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="22"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="83"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="23"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="85"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="24"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="88"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="25"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="90"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="26"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="93"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="27"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="95"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="28"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="98"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="29"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border_green"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="100"
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Ячейка 1 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text=""
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Ячейка 2 -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text=""
+                    android:textColor="#606C38"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+
+
+            <!-- Продолжайте добавлять строки и ячейки, чтобы создать таблицу 28x2 -->
+
+        </TableLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
