@@ -8,18 +8,24 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class TestResult : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FEFAE0")))
         setContentView(R.layout.activity_test_result)
+
         val ResultTextView = findViewById<TextView>(R.id.ResultTextView)
         val CongratulationsTextView = findViewById<TextView>(R.id.CongratulationTextView)
         val ScoreTextView = findViewById<TextView>(R.id.ScoreTextView)
+        var secondaryScore: String? = null
         // полученные баллы
         val globalScore = intent.getIntExtra("Score", 0)
+        secondaryScore = convertPrimaryToSecondary(globalScore)
         // потраченное время
         var timeInMilleseconds: Long = intent.getLongExtra("timeInMilleseconds", 0)
         if (globalScore == 1 || globalScore == 21) {
@@ -39,13 +45,6 @@ class TestResult : AppCompatActivity() {
             CongratulationsTextView.text = "К сожалению,"
         }
         ResultTextView.text = globalScore.toString()
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("users_last_try").child(userId!!)
-
-        // Запись данных для каждого пользователя
-        myRef.child("Score").setValue(globalScore)
-        myRef.child("Time").setValue(timeInMilleseconds)
 
     }
 
@@ -82,6 +81,25 @@ class TestResult : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         finish()
         startActivity(intent)
+    }
+    fun convertPrimaryToSecondary(primaryScore: Int) : String? {
+        val database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://appbase-66912-default-rtdb.europe-west1.firebasedatabase.app")
+        val scoreConversionRef = database.child(primaryScore.toString())
+
+        var secondaryScore: Int? = null
+
+        scoreConversionRef.child(primaryScore.toString()).addListenerForSingleValueEvent(object :
+            ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                secondaryScore = snapshot.value as Int?
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                error.toException().printStackTrace()
+            }
+        })
+
+        return secondaryScore.toString()
     }
 }
 

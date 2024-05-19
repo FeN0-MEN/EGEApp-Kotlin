@@ -36,21 +36,12 @@ class ExTestResultActivity : AppCompatActivity() {
         }
         val congratulationText = "У вас $globalScore $resultText  $answerText $allText"
         Congratulation.setText(congratulationText)
-
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("users_exLast_try").child(userId!!)
-
-        // Запись данных для каждого пользователя
-        myRef.child("Score").setValue(globalScore)
-        myRef.child("Time").setValue(timeInMilleseconds)
-
     }
 
     fun Exit(view: View?) {
         // Получаем баллы и время теста из Intent
-        val globalScore = intent.getIntExtra("Score", 0)
-        val timeInMilleseconds = intent.getLongExtra("timeInMilleseconds", 0)
+        val globalScore = intent.getIntExtra("scoreForEx", 0)
+        val timeInMilleseconds = intent.getLongExtra("allForEx", 0)
 
         // Получаем уникальный идентификатор текущего пользователя
         val userId = FirebaseAuth.getInstance().currentUser?.uid
@@ -62,7 +53,7 @@ class ExTestResultActivity : AppCompatActivity() {
             val usersRef = database.getReference("Users")
 
             // Ссылка на подраздел "Stats" текущего пользователя
-            val currentUserStatsRef = usersRef.child(userId).child("Stats")
+            val currentUserStatsRef = usersRef.child(userId).child("ExStats")
 
             // Создаем новый уникальный идентификатор для каждой попытки теста
             val attemptId = currentUserStatsRef.push().key
