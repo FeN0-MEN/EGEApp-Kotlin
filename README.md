@@ -43,19 +43,19 @@ EGEApp — это Android-приложение для подготовки к э
 
 ## Скриншоты
 
-[Главный экран](https://drive.google.com/file/d/1Ny0XhRfKpE9cBNjV4OD4thNA5yY_v7yI/view?usp=sharing)
-[Статистика](https://drive.google.com/file/d/1O8SDcTk6PEQIQ0m6zeIrr87WhrAZRRt0/view?usp=sharing)
-[Экзамен](https://drive.google.com/file/d/1Nyt2gwLXYll4v30nC5bsRA48z8C4i_4e/view?usp=sharing)
-[Результаты экзамена](https://drive.google.com/file/d/1Q2X3unnwb527io_KFGoPbYwzBPfLjKoG/view?usp=sharing)
-[Выбор заданий для теста](https://drive.google.com/file/d/1Nyt2gwLXYll4v30nC5bsRA48z8C4i_4e/view?usp=sharing)
-[Созданный тест](https://drive.google.com/file/d/1O2WpXcqB8vIR9-t2wJwVutqmanYh3OSQ/view?usp=sharing)
-[Подсказка для задания](https://drive.google.com/file/d/1O4jyvZSojRDA0cyYERAbEHBm-wMQkqiR/view?usp=sharing)
-[Результаты созданного теста](https://drive.google.com/file/d/1NzXHiinqhs-0n3exptMHz3ejr5t6yYoP/view?usp=sharing)
-[Выбор теории](https://drive.google.com/file/d/1Q5eoBJVGXGkVeMD2zDBbSLf69Gtrh8Na/view?usp=sharing)
-[Просмотр теории](https://drive.google.com/file/d/1Q4TA0hfYTS5MJg-vI0KwP3ONuLPEA-4c/view?usp=sharing)
-[Информация об экзамене](https://drive.google.com/file/d/1Q9KgBChyT9b47YVll5iCjMYjME6lj-a4/view?usp=sharing)
-[Авторизация](https://drive.google.com/file/d/1Q-EOoIM9h4gic9ksvZ2EfI8ItVkcCnR1/view?usp=sharing)
-[Регистрация](https://drive.google.com/file/d/1Q-JJDsHhlF1QCDUuAMWxgcOvDOXwyXim/view?usp=sharing)
+- [Главный экран](https://drive.google.com/file/d/1Ny0XhRfKpE9cBNjV4OD4thNA5yY_v7yI/view?usp=sharing)
+- [Статистика](https://drive.google.com/file/d/1O8SDcTk6PEQIQ0m6zeIrr87WhrAZRRt0/view?usp=sharing)
+- [Экзамен](https://drive.google.com/file/d/1Nyt2gwLXYll4v30nC5bsRA48z8C4i_4e/view?usp=sharing)
+- [Результаты экзамена](https://drive.google.com/file/d/1Q2X3unnwb527io_KFGoPbYwzBPfLjKoG/view?usp=sharing)
+- [Выбор заданий для теста](https://drive.google.com/file/d/1Nyt2gwLXYll4v30nC5bsRA48z8C4i_4e/view?usp=sharing)
+- [Созданный тест](https://drive.google.com/file/d/1O2WpXcqB8vIR9-t2wJwVutqmanYh3OSQ/view?usp=sharing)
+- [Подсказка для задания](https://drive.google.com/file/d/1O4jyvZSojRDA0cyYERAbEHBm-wMQkqiR/view?usp=sharing)
+- [Результаты созданного теста](https://drive.google.com/file/d/1NzXHiinqhs-0n3exptMHz3ejr5t6yYoP/view?usp=sharing)
+- [Выбор теории](https://drive.google.com/file/d/1Q5eoBJVGXGkVeMD2zDBbSLf69Gtrh8Na/view?usp=sharing)
+- [Просмотр теории](https://drive.google.com/file/d/1Q4TA0hfYTS5MJg-vI0KwP3ONuLPEA-4c/view?usp=sharing)
+- [Информация об экзамене](https://drive.google.com/file/d/1Q9KgBChyT9b47YVll5iCjMYjME6lj-a4/view?usp=sharing)
+- [Авторизация](https://drive.google.com/file/d/1Q-EOoIM9h4gic9ksvZ2EfI8ItVkcCnR1/view?usp=sharing)
+- [Регистрация](https://drive.google.com/file/d/1Q-JJDsHhlF1QCDUuAMWxgcOvDOXwyXim/view?usp=sharing)
 
 
 
