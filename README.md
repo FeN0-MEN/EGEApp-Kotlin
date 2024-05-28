@@ -11,7 +11,7 @@ EGEApp — это Android-приложение для подготовки к э
 
 ## Связанные проекты
 
-- [EGEApp Web Interface](https://github.com/username/WebApp): Веб-интерфейс для управления заданиями, используемыми в этом приложении.
+- [EGEApp Web Interface](https://github.com/FeN0-MEN/WebApp): Веб-интерфейс для управления заданиями, используемыми в этом приложении.
 
 ## Установка
 
