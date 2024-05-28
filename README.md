@@ -39,8 +39,8 @@ EGEApp — это Android-приложение для подготовки к э
 
 ## Скриншоты
 
-![Главный экран]([screenshots/main_screen.png](https://drive.google.com/file/d/1Ny0XhRfKpE9cBNjV4OD4thNA5yY_v7yI/view?usp=sharing)
-![Статистика]([screenshots/statistics.png](https://drive.google.com/file/d/1O8SDcTk6PEQIQ0m6zeIrr87WhrAZRRt0/view?usp=sharing)
+![Главный экран](https://drive.google.com/file/d/1Ny0XhRfKpE9cBNjV4OD4thNA5yY_v7yI/view?usp=sharing)
+![Статистика](https://drive.google.com/file/d/1O8SDcTk6PEQIQ0m6zeIrr87WhrAZRRt0/view?usp=sharing)
 ![Экзамен](https://drive.google.com/file/d/1Nyt2gwLXYll4v30nC5bsRA48z8C4i_4e/view?usp=sharing)
 ![Результаты экзамена](https://drive.google.com/file/d/1Q2X3unnwb527io_KFGoPbYwzBPfLjKoG/view?usp=sharing)
 ![Выбор заданий для теста](https://drive.google.com/file/d/1Nyt2gwLXYll4v30nC5bsRA48z8C4i_4e/view?usp=sharing)
