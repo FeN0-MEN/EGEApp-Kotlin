@@ -25,14 +25,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Время"
+                android:text="Время тестов ЕГЭ"
                 android:textColor="#606C38"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <View
                 android:id="@+id/title_underline"
-                android:layout_width="60dp"
+                android:layout_width="165dp"
                 android:layout_height="3dp"
                 android:layout_below="@id/title_text"
                 android:layout_centerHorizontal="true"
@@ -281,7 +281,7 @@
                 android:layout_toStartOf="@+id/right_line4"
                 android:fontFamily="@font/droid_sans"
                 android:gravity="center"
-                android:text="Всего за подготовкой"
+                android:text="Всего"
                 android:textAlignment="center"
                 android:textColor="#606C38"
                 android:textSize="16sp" />
@@ -309,7 +309,7 @@
 
             <View
                 android:id="@+id/title_underline2"
-                android:layout_width="135dp"
+                android:layout_width="165dp"
                 android:layout_height="3dp"
                 android:layout_below="@id/title_text2"
                 android:layout_centerHorizontal="true"
@@ -351,14 +351,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Балл"
+                android:text="Балл за тесты ЕГЭ"
                 android:textColor="#606C38"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <View
                 android:id="@+id/title_underline3"
-                android:layout_width="60dp"
+                android:layout_width="165dp"
                 android:layout_height="3dp"
                 android:layout_below="@id/title_text3"
                 android:layout_centerHorizontal="true"
@@ -574,7 +574,7 @@
 
             <View
                 android:id="@+id/title_underline4"
-                android:layout_width="135dp"
+                android:layout_width="165dp"
                 android:layout_height="3dp"
                 android:layout_below="@id/title_text4"
                 android:layout_centerHorizontal="true"
