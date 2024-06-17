@@ -11,12 +11,14 @@ import android.os.CountDownTimer
 import android.os.Environment
 import android.text.TextUtils
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -70,6 +72,18 @@ class TestActivity : AppCompatActivity() {
         indexChoice = random.nextInt(numberKeys.size)
         numberChoice = numberKeys[indexChoice]
         loadTaskFromFirebase("Task_1", numberChoice)
+        imageBox!!.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            val imageView = ImageView(this)
+            imageView.scaleType = ImageView.ScaleType.FIT_XY
+            Picasso.get().load(imageUrl).into(imageView)
+            builder.setView(imageView)
+            val dialog = builder.create()
+            dialog.show()
+            // Установка размера диалогового окна в полный экран
+            val window = dialog.window
+            window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        }
         buttonDownload?.setOnClickListener {
             startDownload()
         }
