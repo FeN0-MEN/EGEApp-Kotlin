@@ -4,8 +4,10 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 
@@ -46,6 +48,18 @@ class HelpActivity : AppCompatActivity() {
         if (imageUrl != null) {
             imageBox!!.visibility = View.VISIBLE
             Picasso.get().load(imageUrl).into(imageBox)
+        }
+        imageBoxHelp!!.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            val imageView = ImageView(this)
+            imageView.scaleType = ImageView.ScaleType.FIT_XY
+            Picasso.get().load(helpImg).into(imageView)
+            builder.setView(imageView)
+            val dialog = builder.create()
+            dialog.show()
+            // Установка размера диалогового окна в полный экран
+            val window = dialog.window
+            window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         }
     }
     fun onClickClose(view: View?) {
