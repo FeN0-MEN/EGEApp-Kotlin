@@ -138,7 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="310dp"
         android:text="Решение"
         android:textColor="#606C38"
         android:textSize="16sp"
@@ -146,7 +146,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageBox" />
+        app:layout_constraintTop_toBottomOf="@+id/title_text1" />
 
     <View
         android:id="@+id/title_underline2"

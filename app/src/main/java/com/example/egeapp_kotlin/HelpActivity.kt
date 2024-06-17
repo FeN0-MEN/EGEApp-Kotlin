@@ -37,7 +37,7 @@ class HelpActivity : AppCompatActivity() {
 
         if (helpImg != null) {
             imageBoxHelp!!.visibility = View.VISIBLE
-            Picasso.get().load(imageUrl).into(imageBoxHelp)
+            Picasso.get().load(helpImg).into(imageBoxHelp)
         }
         if (textForTask != null) {
             TaskText!!.text = textForTask

@@ -32,7 +32,7 @@ class ExActivity : AppCompatActivity() {
                 intent.putExtra("editTextValues", editTextValues)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Вы выбрали некорректное количество заданий (1-10)", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Вы выбрали некорректное количество заданий (1-2)", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -51,7 +51,7 @@ class ExActivity : AppCompatActivity() {
 
     private fun checkEditTextValues(editTextValues: HashMap<String, Int>): Boolean {
         for ((_, value) in editTextValues) {
-            if (value in 1..10) {
+            if (value in 1..2) {
                 return true
             }
         }
